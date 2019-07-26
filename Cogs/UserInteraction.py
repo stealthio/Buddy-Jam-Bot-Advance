@@ -52,7 +52,7 @@ class UserInteraction(commands.Cog, name="General"):
 
     @commands.command()
     @commands.is_owner()
-    async def wipeChannels(self, ctx):
+    async def wipechannels(self, ctx):
         """Wipes the server clean of ANY messages"""
         server = ctx.guild
         channels = server.text_channels

@@ -97,7 +97,7 @@ Crowdforge: https://crowdforge.io/jams/Buddy-Jam-{self.data['jam']}
     # Command to set the current Buddy Jam number
     @commands.command()
     @commands.has_permissions(administrator=True)
-    async def setJamNo(self, ctx, jam):
+    async def setjamno(self, ctx, jam):
         """Set the current Buddy Jam number"""
         if jam == "":
             await ctx.send('Usage: ```!setJamNo 3```')
@@ -109,7 +109,7 @@ Crowdforge: https://crowdforge.io/jams/Buddy-Jam-{self.data['jam']}
     # Command to announce that the current jam is almost over, and that the voting for the next one starts
     @commands.command()
     @commands.has_permissions(administrator=True)
-    async def announceJam(self, ctx):
+    async def announcejam(self, ctx):
         """Writes an announcement regarding voting into the announcement channel"""
         member = ctx.author
         if member != self.bot:
@@ -131,7 +131,7 @@ Votings will be closed a few hours before the jam begins and the winner will be 
     # Command to start the next jam
     @commands.command()
     @commands.has_permissions(administrator=True)
-    async def startJam(self, ctx):
+    async def startjam(self, ctx):
         """Announces that the next jam has started"""
         member = ctx.author
         if member != self.bot:

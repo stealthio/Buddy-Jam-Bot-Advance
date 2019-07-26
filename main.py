@@ -15,6 +15,5 @@ async def on_ready():
 bot.load_extension("Cogs.UserInteraction")
 bot.load_extension("Cogs.BuddyJam")
 
-# Start the bot, the long string here is the bot specific token which tells the bot who he is
-# This is sensitive information
+# Starts the bot
 bot.run(os.environ.get('token'))
