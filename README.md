@@ -1,6 +1,6 @@
 # Buddy-Jam-Bot (Advance) [![buddyjam]](https://www.reddit.com/r/BuddyJam/) [![discord]](https://discord.gg/V2SaHEM)
 
-<img src="https://raw.githubusercontent.com/stealthio/Buddy-Jam-Bot-Advance/master/img/logo.png?token=AEZSBNXC3D7BTG6DBOXP2JS5HKR2O" align="right"
+<img src="https://raw.githubusercontent.com/stealthio/Buddy-Jam-Bot-Advance/master/img/logo.png" align="right"
      title="BuddyJam Logo" width="120" height="120">
 
 This is the second version of the **Buddy-Jam-Bot**, it's still WIP and it's main purpose is automatizing most manual
