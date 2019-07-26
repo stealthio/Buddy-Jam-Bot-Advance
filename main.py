@@ -9,7 +9,7 @@ data = {}
 @bot.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
-    if os.environ.get('debug') == 1:
+    if os.environ.get('debug') == "1":
         await bot.logout()
 
 
