@@ -1,4 +1,4 @@
-# Buddy-Jam-Bot (Advance) [![buddyjam]](https://www.reddit.com/r/BuddyJam/) [![discord]](https://discord.gg/V2SaHEM)
+# Buddy-Jam-Bot (Advance) [![buddyjam]](https://www.reddit.com/r/BuddyJam/) [![discord]](https://discord.gg/V2SaHEM) [![Build Status](https://travis-ci.com/stealthio/Buddy-Jam-Bot-Advance.svg?branch=master)](https://travis-ci.com/stealthio/Buddy-Jam-Bot-Advance)
 
 <img src="https://raw.githubusercontent.com/stealthio/Buddy-Jam-Bot-Advance/master/img/logo.png" align="right"
      title="BuddyJam Logo" width="120" height="120">
