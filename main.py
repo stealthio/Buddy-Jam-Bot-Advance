@@ -12,11 +12,11 @@ conn = FTP(host=os.environ.get('FTPHost'))
 conn.connect()
 conn.login(user=os.environ.get('FTPUser'),passwd=os.environ.get('FTPPass'))
 
-file = open('Cogs/data.json', 'w')
+file = open('Cogs/data.json', 'w+')
 conn.retrlines('RETR data.json', writeline)
 file.close()
 
-file = open('Cogs/userdata.json', 'w')
+file = open('Cogs/userdata.json', 'w+')
 conn.retrlines('RETR userdata.json', writeline)
 file.close()
 
