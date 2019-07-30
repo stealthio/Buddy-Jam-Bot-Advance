@@ -1,5 +1,6 @@
 import math
 import os
+from ftplib import FTP
 
 import discord
 import json
@@ -25,6 +26,13 @@ class UserInteraction(commands.Cog, name="General"):
     async def saveFiles(self):
         with open(os.path.join(path, 'userdata.json'), 'w') as f:
             json.dump(self.userdata, f)
+
+        conn = FTP(host=os.environ.get('FTPHost'))
+        conn.connect()
+        conn.login(user=os.environ.get('FTPUser'), passwd=os.environ.get('FTPPass'))
+        with open('Cogs/userdata.json', 'rb') as f:
+            conn.storlines('STOR %s' % 'userdata.json', f)
+        conn.quit()
 
     @commands.command(pass_context=False)
     async def hello(self, ctx, args = [], member: discord.Member = None):

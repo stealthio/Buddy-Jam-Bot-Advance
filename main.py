@@ -1,5 +1,26 @@
+from ftplib import FTP
+
 from discord.ext import commands
 import os
+
+
+def writeline(data):
+     file.write(data)
+     file.write(os.linesep)
+
+conn = FTP(host=os.environ.get('FTPHost'))
+conn.connect()
+conn.login(user=os.environ.get('FTPUser'),passwd=os.environ.get('FTPPass'))
+
+file = open('Cogs/data.json', 'w')
+conn.retrlines('RETR data.json', writeline)
+file.close()
+
+file = open('Cogs/userdata.json', 'w')
+conn.retrlines('RETR userdata.json', writeline)
+file.close()
+
+conn.close()
 
 # Set the prefix for the bot to listen for commands
 bot = commands.Bot(command_prefix='!')

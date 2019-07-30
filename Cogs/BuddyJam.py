@@ -1,4 +1,5 @@
 import os
+from ftplib import FTP
 
 from discord.ext import commands
 import json
@@ -56,6 +57,12 @@ class BuddyJam(commands.Cog, name="Buddy-Jam"):
     async def saveFiles(self):
         with open(os.path.join(path, 'data.json'), 'w') as f:
             json.dump(self.data, f)
+        conn = FTP(host=os.environ.get('FTPHost'))
+        conn.connect()
+        conn.login(user=os.environ.get('FTPUser'), passwd=os.environ.get('FTPPass'))
+        with open('Cogs/data.json', 'rb') as f:
+            conn.storlines('STOR %s' % 'data.json', f)
+        conn.quit()
 
     async def refreshInformation(self):
         await self.saveFiles()
