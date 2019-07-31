@@ -89,7 +89,7 @@ class UserInteraction(commands.Cog, name="General"):
         ud[str(member.id)].setdefault("score", 0)
         ud[str(member.id)].setdefault("level", 0)
         ud[str(member.id)]["score"] += amount
-        if math.sqrt(ud[str(member.id)]["score"]) > ud[str(member.id)]["level"]:
+        while math.sqrt(ud[str(member.id)]["score"]) > ud[str(member.id)]["level"]:
             await self.level_up(member, channel)
 
 
