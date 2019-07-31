@@ -12,6 +12,7 @@ path = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 # Controls BuddyJam specific commands and behaviours
 class BuddyJam(commands.Cog, name="Buddy-Jam"):
     def __init__(self, bot):
+        print("Initializing BuddyJam Cog")
         self.bot = bot
         if os.path.exists(os.path.join(path, 'data.json')):
             with open(os.path.join(path, 'data.json')) as f:
