@@ -98,6 +98,8 @@ class UserInteraction(commands.Cog, name="General"):
             await member.add_roles(r)
         else:
             nr = await guild.create_role(name=f"Level {ud[str(member.id)]['level']}")
+            nr.hoist = True
+            nr.position = ud[str(member.id)]['level']
             await member.add_roles(nr)
         await channel.send("Congratulations, you leveled up!")
 

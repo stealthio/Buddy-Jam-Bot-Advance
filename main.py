@@ -10,6 +10,10 @@ def writeline(data):
      file.write(os.linesep)
 
 print("Connecting to FTP Server")
+print(os.environ.get('FTPHost'))
+print(os.environ.get('FTPUser'))
+print(os.environ.get('FTPPass'))
+
 conn = FTP(host=os.environ.get('FTPHost'))
 conn.connect()
 conn.login(user=os.environ.get('FTPUser'),passwd=os.environ.get('FTPPass'))
