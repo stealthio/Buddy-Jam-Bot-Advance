@@ -81,7 +81,7 @@ class UserInteraction(commands.Cog, name="General"):
             whom = ctx.message.author
 
         await ctx.message.channel.send(f"Awarding {amount} experience to {whom}")
-        await self.give_exp(whom, amount, channelGeneral)
+        await self.give_exp(whom, int(amount), channelGeneral)
 
     async def give_exp(self, member, amount, channel):
         ud = self.userdata
