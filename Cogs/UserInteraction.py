@@ -72,6 +72,17 @@ class UserInteraction(commands.Cog, name="General"):
         channel = self.bot.get_channel(channelGeneral)
         await channel.send(f"Welcome to the Buddy-Jam {str(member.mention)}!")
 
+    # Command to set the current Buddy Jam number
+    @commands.command()
+    @commands.has_permissions(administrator=True)
+    async def giveexp(self, ctx, amount, whom: discord.Member = None):
+        """Gives exp to the user. P1 - amt, P2 - whom"""
+        if not whom:
+            whom = ctx.message.author
+
+        await ctx.message.channel.send(f"Awarding {amount} experience to {whom}")
+        await self.give_exp(whom, amount, channelGeneral)
+
     async def give_exp(self, member, amount, channel):
         ud = self.userdata
         ud.setdefault(str(member.id), {})
